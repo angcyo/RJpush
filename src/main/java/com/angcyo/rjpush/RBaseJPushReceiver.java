@@ -29,6 +29,28 @@ public class RBaseJPushReceiver extends BroadcastReceiver {
 
     // 打印所有的 intent extra 数据
     private static String printBundle(Bundle bundle) {
+
+        /**收到推送  大概的数据结构
+         * [MyReceiver] onReceive - cn.jpush.android.intent.NOTIFICATION_RECEIVED, extras:
+         key:cn.jpush.android.ALERT, value:来自远方的消息.
+         key:cn.jpush.android.NOTIFICATION_ID, value:1129723668
+         key:cn.jpush.android.ALERT_TYPE, value:7
+         key:cn.jpush.android.NOTIFICATION_CONTENT_TITLE, value:UIView
+         key:cn.jpush.android.MSG_ID, value:1129723668
+         */
+
+        /**点击通知
+         * [MyReceiver] onReceive - cn.jpush.android.intent.NOTIFICATION_OPENED, extras:
+         key:cn.jpush.android.NOTIFICATION_TYPE, value:0
+         key:app, value:com.angcyo.uidemo
+         key:cn.jpush.android.ALERT, value:来自远方的消息.
+         key:cn.jpush.android.NOTIFICATION_ID, value:1129723668
+         key:cn.jpush.android.ALERT_TYPE, value:7
+         key:cn.jpush.android.NOTIFICATION_CONTENT_TITLE, value:UIView
+         key:cn.jpush.android.MSG_ID, value:1129723668
+         key:sdktype, value:JPUSH
+         * */
+
         StringBuilder sb = new StringBuilder();
         for (String key : bundle.keySet()) {
             if (key.equals(JPushInterface.EXTRA_NOTIFICATION_ID)) {
