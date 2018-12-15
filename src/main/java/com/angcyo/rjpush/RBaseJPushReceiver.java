@@ -25,7 +25,7 @@ import cn.jpush.android.api.JPushInterface;
  * Version: 1.0.0
  */
 public class RBaseJPushReceiver extends BroadcastReceiver {
-    private static final String TAG = "JIGUANG-angcyo";
+    private static final String TAG = "RJpush-angcyo";
 
     // 打印所有的 intent extra 数据
     private static String printBundle(Bundle bundle) {
