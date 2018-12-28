@@ -1,4 +1,8 @@
-apply from: '../lib/lib_base.gradle'
+if (getRootProject().hasProperty("allGradle")) {
+    apply from: allGradle.lib_base
+} else {
+    apply from: '../lib/lib_base.gradle'
+}
 
 def application_id = hasProperty("application_id") ? ext.application_id : 'com.angcyo.demo'
 // 请将以下代码, 同时复制到APP的gradle文件中
